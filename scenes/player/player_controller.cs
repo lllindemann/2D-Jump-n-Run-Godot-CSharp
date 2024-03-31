@@ -5,8 +5,6 @@ public partial class player_controller : CharacterBody2D
 {
 	// variables relevant for main player movement
 	[Export]
-	public int SPEED { get; set; } = 14;
-	[Export]
 	public int MAX_SPEED { get; set; } = 150;
 	[Export]
 	public int JUMP_SPEED { get; set; } = 400;
@@ -39,8 +37,8 @@ public partial class player_controller : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-
 		velocity = Velocity;
+		getInput();
 
 		// add gravity on player when he is in the air
 		if (!IsOnFloor())
@@ -51,7 +49,6 @@ public partial class player_controller : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
-
 	}
 
 	public void getInput()
@@ -60,19 +57,19 @@ public partial class player_controller : CharacterBody2D
 		velocity.X = 0;
 
 		// We check for each move input and update the direction accordingly.
-		if (Input.IsActionPressed("ui_right"))
+		if (Input.IsKeyPressed(Key.Right) || Input.IsKeyPressed(Key.D))
 		{
-			velocity.X += SPEED;
+			velocity.X += MOVE_SPEED;
 
 		}
-		else if (Input.IsActionPressed("ui_left"))
+		 if (Input.IsKeyPressed(Key.Left) || Input.IsKeyPressed(Key.D))
 		{
-			velocity.Y -= SPEED;
+			velocity.X -= MOVE_SPEED;
 		}
-		else if (Input.IsActionPressed("ui_select"))
+		 if ((Input.IsKeyPressed(Key.Space) || Input.IsKeyPressed(Key.Up)) && IsOnFloor())
 		{
 			jumping = true;
-			velocity.Y = JUMP_SPEED;
+			velocity.Y = - JUMP_VELOCITY;
 		}
 	}
 }
