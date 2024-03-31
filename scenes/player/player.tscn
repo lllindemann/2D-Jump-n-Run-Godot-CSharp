@@ -87,11 +87,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x3iva")
-frame_progress = 0.820071
+frame_progress = 0.117366
 speed_scale = 2.0
