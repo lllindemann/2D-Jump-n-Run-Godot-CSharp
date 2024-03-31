@@ -87,6 +87,16 @@ public partial class player_controller : CharacterBody2D
 	public void ProcessAnimation()
 	{
 
+		if (Math.Abs(velocity.X) >= 20)
+		{
+			_sprite2d.FlipH = false;
+
+			if (velocity.X < 0)
+			{
+				_sprite2d.FlipH = true;
+			}
+		}
+
 		if (!IsOnFloor())
 		{
 			_sprite2d.Play("fall", 1);
