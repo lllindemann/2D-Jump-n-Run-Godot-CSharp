@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctgnrew4inbbg"]
+[gd_scene load_steps=6 format=3 uid="uid://ctgnrew4inbbg"]
 
 [ext_resource type="Texture2D" uid="uid://d2e6ggx4xgmwe" path="res://assets/Terrain/Terrain (16x16).png" id="1_ng1st"]
 [ext_resource type="PackedScene" uid="uid://bw6710g7e0bkv" path="res://scenes/player/player.tscn" id="2_5fwdw"]
+[ext_resource type="Script" path="res://scenes/player/player_controller.cs" id="3_2qrtr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgfcp"]
 texture = ExtResource("1_ng1st")
@@ -595,3 +596,4 @@ layer_0/tile_data = PackedInt32Array(2359296, 65536, 5, 2359297, 65536, 5, 23592
 
 [node name="Player" parent="." instance=ExtResource("2_5fwdw")]
 position = Vector2(311, 535)
+script = ExtResource("3_2qrtr")
