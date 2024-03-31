@@ -21,17 +21,18 @@ public partial class player_controller : CharacterBody2D
 	Vector2 velocity = new Vector2();
 	bool jumping = false;
 
+	AnimatedSprite2D _sprite2d;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		_sprite2d = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-
-
+		SetupAnimation();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +44,7 @@ public partial class player_controller : CharacterBody2D
 		// add gravity on player when he is in the air
 		if (!IsOnFloor())
 		{
-			velocity.Y += gravity * (float) delta;
+			velocity.Y += gravity * (float)delta;
 
 		}
 
@@ -62,14 +63,29 @@ public partial class player_controller : CharacterBody2D
 			velocity.X += MOVE_SPEED;
 
 		}
-		 if (Input.IsKeyPressed(Key.Left) || Input.IsKeyPressed(Key.D))
+		if (Input.IsKeyPressed(Key.Left) || Input.IsKeyPressed(Key.D))
 		{
 			velocity.X -= MOVE_SPEED;
 		}
-		 if ((Input.IsKeyPressed(Key.Space) || Input.IsKeyPressed(Key.Up)) && IsOnFloor())
+		if ((Input.IsKeyPressed(Key.Space) || Input.IsKeyPressed(Key.Up)) && IsOnFloor())
 		{
 			jumping = true;
-			velocity.Y = - JUMP_VELOCITY;
+			velocity.Y = -JUMP_VELOCITY;
 		}
+	}
+
+	public void SetupAnimation()
+	{
+		_sprite2d.Animation = "default";
+		_sprite2d.Play();
+		_sprite2d.SpeedScale = 1;
+
+
+	}
+
+	public void ProcessAnimation()
+	{
+		_sprite2d.Play("default", 1);
+
 	}
 }
