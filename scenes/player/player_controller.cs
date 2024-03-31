@@ -27,12 +27,13 @@ public partial class player_controller : CharacterBody2D
 	public override void _Ready()
 	{
 		_sprite2d = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		SetupAnimation();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		SetupAnimation();
+		ProcessAnimation();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -85,7 +86,20 @@ public partial class player_controller : CharacterBody2D
 
 	public void ProcessAnimation()
 	{
-		_sprite2d.Play("default", 1);
+
+		if (!IsOnFloor())
+		{
+			_sprite2d.Play("fall", 1);
+		}
+		else if (Math.Abs(velocity.X) >= 20)
+		{
+			_sprite2d.Play("run", 3);
+		}
+		else
+		{
+			_sprite2d.Play("default", 1);
+		}
+
 
 	}
 }
