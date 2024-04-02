@@ -67,11 +67,11 @@ public partial class PlayerController : CharacterBody2D
 			_velocity.X += MOVE_SPEED;
 
 		}
-		if (Input.IsKeyPressed(Key.Left) || Input.IsKeyPressed(Key.D))
+		if (Input.IsKeyPressed(Key.Left) || Input.IsKeyPressed(Key.A))
 		{
 			_velocity.X -= MOVE_SPEED;
 		}
-		if ((Input.IsKeyPressed(Key.Space) || Input.IsKeyPressed(Key.Up)) && IsOnFloor())
+		if ((Input.IsKeyPressed(Key.Space) || Input.IsKeyPressed(Key.Up) || Input.IsKeyPressed(Key.W)) && IsOnFloor())
 		{
 			_jumping = true;
 			_velocity.Y = -JUMP_VELOCITY;
