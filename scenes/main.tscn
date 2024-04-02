@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctgnrew4inbbg"]
+[gd_scene load_steps=7 format=3 uid="uid://ctgnrew4inbbg"]
 
 [ext_resource type="Texture2D" uid="uid://d2e6ggx4xgmwe" path="res://assets/Terrain/Terrain (16x16).png" id="1_ng1st"]
 [ext_resource type="PackedScene" uid="uid://bw6710g7e0bkv" path="res://scenes/player/player.tscn" id="2_5fwdw"]
 [ext_resource type="Script" path="res://scenes/player/PlayerController.cs" id="3_pvdoo"]
+[ext_resource type="PackedScene" uid="uid://b22bx6cafceom" path="res://scenes/fruit/fruit.tscn" id="4_a4xs1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgfcp"]
 texture = ExtResource("1_ng1st")
@@ -598,3 +599,18 @@ layer_0/tile_data = PackedInt32Array(7667639, 65536, 5, 7733175, 65536, 5, 77987
 [node name="Player" parent="." instance=ExtResource("2_5fwdw")]
 position = Vector2(338, 251)
 script = ExtResource("3_pvdoo")
+
+[node name="Fruit" parent="." instance=ExtResource("4_a4xs1")]
+position = Vector2(401, 412)
+
+[node name="Fruit2" parent="." instance=ExtResource("4_a4xs1")]
+position = Vector2(531, 341)
+
+[node name="Fruit3" parent="." instance=ExtResource("4_a4xs1")]
+position = Vector2(690, 395)
+
+[node name="Fruit4" parent="." instance=ExtResource("4_a4xs1")]
+position = Vector2(646, 264)
+
+[node name="Fruit5" parent="." instance=ExtResource("4_a4xs1")]
+position = Vector2(799, 410)

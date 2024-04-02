@@ -30,7 +30,7 @@ public partial class PlayerController : CharacterBody2D
 
 	///	<summary>
 	///	Called when the node enters the scene tree for the first time.
-    ///	</summary>
+	///	</summary>
 	public override void _Ready()
 	{
 		_Sprite2d = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -39,20 +39,20 @@ public partial class PlayerController : CharacterBody2D
 
 
 	/// <summary>
-    /// Called every frame
+	/// Called every frame
 	/// Idle processing
-    /// </summary>
-    /// <param name="delta">elapsed time since the previous frame</param>
+	/// </summary>
+	/// <param name="delta">elapsed time since the previous frame</param>
 	public override void _Process(double delta)
 	{
 		ProcessAnimation();
 	}
 
 	/// <summary>
-    /// Called every fixed time interval
+	/// Called every fixed time interval
 	/// Physics processing: calculations that must happen before each physics step
-    /// </summary>
-    /// <param name="delta">elapsed time since the previous frame</param>
+	/// </summary>
+	/// <param name="delta">elapsed time since the previous frame</param>
 	public override void _PhysicsProcess(double delta)
 	{
 		_velocity = Velocity;
@@ -73,8 +73,8 @@ public partial class PlayerController : CharacterBody2D
 	#region PUBLIC_METHODS
 
 	/// <summary>
-    /// Key Control Handling
-    /// </summary>
+	/// Key Control Handling
+	/// </summary>
 	public void GetInput()
 	{
 		_velocity.X = 0;
@@ -97,8 +97,8 @@ public partial class PlayerController : CharacterBody2D
 	}
 
 	/// <summary>
-    /// Initialize the idle default animation of the player sprite
-    /// </summary>
+	/// Initialize the idle default animation of the player sprite
+	/// </summary>
 	public void SetupAnimation()
 	{
 		_Sprite2d.Animation = "default";
@@ -109,8 +109,8 @@ public partial class PlayerController : CharacterBody2D
 	}
 
 	/// <summary>
-    /// Update the animation of the player sprite via movement direction
-    /// </summary>
+	/// Update the animation of the player sprite via movement direction
+	/// </summary>
 	public void ProcessAnimation()
 	{
 
