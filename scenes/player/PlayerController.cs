@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 /// <summary>
-/// Inherit from this base class to create a singleton class which has access on monobehavior functions.
+/// Controller Class binded to the main Player Object (CharacterBody2D)
 /// </summary>
 public partial class PlayerController : CharacterBody2D
 {
@@ -26,24 +26,37 @@ public partial class PlayerController : CharacterBody2D
 
 	private AnimatedSprite2D _Sprite2d;
 
-	// Called when the node enters the scene tree for the first time.
+	#region GODOT_LIFECYCLE_METHODS
+
+	///	<summary>
+	///	Called when the node enters the scene tree for the first time.
+    ///	</summary>
 	public override void _Ready()
 	{
 		_Sprite2d = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		SetupAnimation();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+
+	/// <summary>
+    /// Called every frame
+	/// Idle processing
+    /// </summary>
+    /// <param name="delta">elapsed time since the previous frame</param>
 	public override void _Process(double delta)
 	{
 		ProcessAnimation();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	/// <summary>
+    /// Called every fixed time interval
+	/// Physics processing: calculations that must happen before each physics step
+    /// </summary>
+    /// <param name="delta">elapsed time since the previous frame</param>
 	public override void _PhysicsProcess(double delta)
 	{
 		_velocity = Velocity;
-		getInput();
+		GetInput();
 
 		// add gravity on player when he is in the air
 		if (!IsOnFloor())
@@ -55,9 +68,14 @@ public partial class PlayerController : CharacterBody2D
 		Velocity = _velocity;
 		MoveAndSlide();
 	}
+	#endregion
 
+	#region PUBLIC_METHODS
 
-	public void getInput()
+	/// <summary>
+    /// Key Control Handling
+    /// </summary>
+	public void GetInput()
 	{
 		_velocity.X = 0;
 
@@ -77,6 +95,10 @@ public partial class PlayerController : CharacterBody2D
 			_velocity.Y = -JUMP_VELOCITY;
 		}
 	}
+
+	/// <summary>
+    /// Initialize the idle default animation of the player sprite
+    /// </summary>
 	public void SetupAnimation()
 	{
 		_Sprite2d.Animation = "default";
@@ -86,6 +108,9 @@ public partial class PlayerController : CharacterBody2D
 
 	}
 
+	/// <summary>
+    /// Update the animation of the player sprite via movement direction
+    /// </summary>
 	public void ProcessAnimation()
 	{
 
@@ -114,4 +139,5 @@ public partial class PlayerController : CharacterBody2D
 
 
 	}
+	#endregion
 }
