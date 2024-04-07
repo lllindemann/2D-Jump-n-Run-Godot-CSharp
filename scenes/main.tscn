@@ -604,19 +604,19 @@ script = ExtResource("3_pvdoo")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(488, -124)
 
-[node name="Fruit" parent="." instance=ExtResource("4_a4xs1")]
+[node name="Fruits" type="Node" parent="."]
+
+[node name="Fruit" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(401, 412)
 
-[node name="Fruit2" parent="." instance=ExtResource("4_a4xs1")]
+[node name="Fruit2" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(531, 341)
 
-[node name="Fruit3" parent="." instance=ExtResource("4_a4xs1")]
+[node name="Fruit3" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(690, 395)
 
-[node name="Fruit4" parent="." instance=ExtResource("4_a4xs1")]
+[node name="Fruit4" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(646, 264)
 
-[node name="Fruit5" parent="." instance=ExtResource("4_a4xs1")]
+[node name="Fruit5" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(799, 410)
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
