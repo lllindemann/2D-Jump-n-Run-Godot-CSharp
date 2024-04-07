@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://ctgnrew4inbbg"]
+[gd_scene load_steps=8 format=3 uid="uid://ctgnrew4inbbg"]
 
 [ext_resource type="Texture2D" uid="uid://d2e6ggx4xgmwe" path="res://assets/Terrain/Terrain (16x16).png" id="1_ng1st"]
 [ext_resource type="PackedScene" uid="uid://bw6710g7e0bkv" path="res://scenes/player/player.tscn" id="2_5fwdw"]
 [ext_resource type="Script" path="res://scenes/player/PlayerController.cs" id="3_pvdoo"]
 [ext_resource type="PackedScene" uid="uid://b22bx6cafceom" path="res://scenes/fruit/fruit.tscn" id="4_a4xs1"]
-[ext_resource type="Texture2D" uid="uid://d3hst4kuijftk" path="res://assets/Items/Checkpoints/Start (Moving) (64x64).png" id="5_8aspt"]
+[ext_resource type="PackedScene" uid="uid://tko6imedi1g8" path="res://scenes/checkpoints/StartCheckpoint.tscn" id="5_jtckm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgfcp"]
 texture = ExtResource("1_ng1st")
@@ -581,136 +581,6 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_vgfcp")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c58a8"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjwal"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tj6qr"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fp8tm"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mb1cq"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qr205"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_um6ha"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_outfs"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_whhyd"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4q6sk"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3iyi"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fn3d8"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(704, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_okjd5"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(768, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ctgs"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(832, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4bfk1"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(896, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cl8xi"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(960, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcd8e"]
-atlas = ExtResource("5_8aspt")
-region = Rect2(1024, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6rhn3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c58a8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fjwal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tj6qr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fp8tm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mb1cq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qr205")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_um6ha")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_outfs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_whhyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4q6sk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3iyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fn3d8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_okjd5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ctgs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4bfk1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cl8xi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lcd8e")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5mmx"]
-size = Vector2(34, 8)
-
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -742,10 +612,5 @@ position = Vector2(646, 264)
 [node name="Fruit5" parent="." instance=ExtResource("4_a4xs1")]
 position = Vector2(799, 410)
 
-[node name="StartCheckpoint" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3330, 289)
-sprite_frames = SubResource("SpriteFrames_6rhn3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartCheckpoint"]
-position = Vector2(11, 28)
-shape = SubResource("RectangleShape2D_s5mmx")
+[node name="StartCheckpoint" parent="." instance=ExtResource("5_jtckm")]
+position = Vector2(-3333, 288)
