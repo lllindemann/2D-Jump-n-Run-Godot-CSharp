@@ -584,9 +584,6 @@ sources/0 = SubResource("TileSetAtlasSource_vgfcp")
 
 [node name="Main" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2829, 151)
-
 [node name="TileMap" type="TileMap" parent="."]
 process_physics_priority = 1
 position = Vector2(1, 0)
@@ -604,6 +601,9 @@ position = Vector2(4147, -1472)
 position = Vector2(-3317, 275)
 script = ExtResource("3_pvdoo")
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(488, -124)
+
 [node name="Fruit" parent="." instance=ExtResource("4_a4xs1")]
 position = Vector2(401, 412)
 
@@ -618,3 +618,5 @@ position = Vector2(646, 264)
 
 [node name="Fruit5" parent="." instance=ExtResource("4_a4xs1")]
 position = Vector2(799, 410)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
