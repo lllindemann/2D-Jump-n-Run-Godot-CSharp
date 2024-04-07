@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctgnrew4inbbg"]
+[gd_scene load_steps=9 format=3 uid="uid://ctgnrew4inbbg"]
 
 [ext_resource type="Texture2D" uid="uid://d2e6ggx4xgmwe" path="res://assets/Terrain/Terrain (16x16).png" id="1_ng1st"]
 [ext_resource type="PackedScene" uid="uid://bw6710g7e0bkv" path="res://scenes/player/player.tscn" id="2_5fwdw"]
 [ext_resource type="Script" path="res://scenes/player/PlayerController.cs" id="3_pvdoo"]
 [ext_resource type="PackedScene" uid="uid://b22bx6cafceom" path="res://scenes/fruit/fruit.tscn" id="4_a4xs1"]
 [ext_resource type="PackedScene" uid="uid://tko6imedi1g8" path="res://scenes/checkpoints/StartCheckpoint.tscn" id="5_jtckm"]
+[ext_resource type="PackedScene" uid="uid://db3pjienn3r8s" path="res://scenes/checkpoints/EndCheckpoint.tscn" id="6_844uv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgfcp"]
 texture = ExtResource("1_ng1st")
@@ -613,4 +614,7 @@ position = Vector2(646, 264)
 position = Vector2(799, 410)
 
 [node name="StartCheckpoint" parent="." instance=ExtResource("5_jtckm")]
-position = Vector2(-3333, 288)
+position = Vector2(-3330, 288)
+
+[node name="EndCheckpoint" parent="." instance=ExtResource("6_844uv")]
+position = Vector2(4147, -1472)

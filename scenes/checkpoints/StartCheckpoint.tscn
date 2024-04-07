@@ -133,11 +133,10 @@ animations = [{
 size = Vector2(34, 8)
 
 [node name="StartCheckpoint" type="Area2D"]
-collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3g1kb")
-frame_progress = 0.0815681
+frame_progress = 0.306442
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(11, 28)
