@@ -39,4 +39,5 @@ Reach the end of the level (flag) to progress to the next level.
 ## Getting Started
 1. Clone or download the repository to your local machine.
 2. Open the project in Godot Engine v4.2.1. (Mono/.net Version)
-3. Play the game within the Godot Engine editor or export it to your desired platform.
+3. Open the main.tscn
+4. Play the game within the Godot Engine editor or export it to your desired platform.
