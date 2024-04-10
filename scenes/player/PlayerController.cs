@@ -18,6 +18,9 @@ public partial class PlayerController : CharacterBody2D
 	[Export]
 	public float JUMP_VELOCITY = 400.0f;
 
+	[Export]
+	public Vector2 SpawnPosition = new Vector2();
+
 	public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
 
@@ -35,6 +38,7 @@ public partial class PlayerController : CharacterBody2D
 	{
 		_Sprite2d = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		SetupAnimation();
+		SpawnPosition = Position;
 	}
 
 
@@ -55,6 +59,10 @@ public partial class PlayerController : CharacterBody2D
 	/// <param name="delta">elapsed time since the previous frame</param>
 	public override void _PhysicsProcess(double delta)
 	{
+		if(Position.Y > 1000){
+			Respawn();
+		}
+
 		_velocity = Velocity;
 		GetInput();
 
@@ -62,7 +70,6 @@ public partial class PlayerController : CharacterBody2D
 		if (!IsOnFloor())
 		{
 			_velocity.Y += Gravity * (float)delta;
-
 		}
 
 		Velocity = _velocity;
@@ -138,6 +145,15 @@ public partial class PlayerController : CharacterBody2D
 		}
 
 
+	}
+	#endregion
+
+	#region PRIVATE_METHODS
+	private void Respawn()
+	{
+		Position = SpawnPosition;
+		_velocity.X = 0;
+		_velocity.Y = 0;
 	}
 	#endregion
 }
