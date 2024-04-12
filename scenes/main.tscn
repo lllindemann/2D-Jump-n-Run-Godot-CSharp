@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctgnrew4inbbg"]
+[gd_scene load_steps=15 format=3 uid="uid://ctgnrew4inbbg"]
 
 [ext_resource type="Texture2D" uid="uid://c41ughe28i1sb" path="res://assets/background/jungle/plx-1.png" id="1_7brnp"]
+[ext_resource type="Script" path="res://scenes/GameManager.cs" id="1_mw6on"]
 [ext_resource type="Texture2D" uid="uid://d2e6ggx4xgmwe" path="res://assets/Terrain/Terrain (16x16).png" id="1_ng1st"]
 [ext_resource type="PackedScene" uid="uid://bw6710g7e0bkv" path="res://scenes/player/player.tscn" id="2_5fwdw"]
 [ext_resource type="Texture2D" uid="uid://xpr5li4obqr7" path="res://assets/background/jungle/plx-2.png" id="2_36kn5"]
@@ -587,7 +588,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_vgfcp")
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("FRUITS")]
+script = ExtResource("1_mw6on")
+FRUITS = NodePath("Fruits")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -666,7 +669,7 @@ script = ExtResource("3_pvdoo")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(488, -124)
 
-[node name="Fruits" type="Node" parent="."]
+[node name="Fruits" type="Node2D" parent="."]
 
 [node name="Fruit" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(-3020, 305)
