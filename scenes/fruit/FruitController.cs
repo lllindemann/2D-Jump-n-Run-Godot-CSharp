@@ -1,10 +1,14 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class FruitController : Area2D
 {
 	[Export]
 	public SpriteFrames[] SPRITES { get; set; } = { };
+
+	[Signal]
+	public delegate void CollectedEventHandler();
 
 	private AnimatedSprite2D _Sprite2d;
 	private bool _active = true;
@@ -33,6 +37,7 @@ public partial class FruitController : Area2D
 		{
 			_active = false;
 			Hide();
+			EmitSignal(SignalName.Collected);
 		}
 	}
 
