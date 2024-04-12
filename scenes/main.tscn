@@ -669,7 +669,7 @@ position = Vector2(488, -124)
 [node name="Fruits" type="Node" parent="."]
 
 [node name="Fruit" parent="Fruits" instance=ExtResource("4_a4xs1")]
-position = Vector2(401, 412)
+position = Vector2(-3020, 305)
 
 [node name="Fruit2" parent="Fruits" instance=ExtResource("4_a4xs1")]
 position = Vector2(531, 341)
