@@ -13,4 +13,4 @@ grow_vertical = 2
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 2
 texture_under = ExtResource("1_a2osn")
-texture_over = ExtResource("2_4p7ne")
+texture_progress = ExtResource("2_4p7ne")
