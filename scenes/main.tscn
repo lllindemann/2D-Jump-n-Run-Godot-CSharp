@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctgnrew4inbbg"]
+[gd_scene load_steps=16 format=3 uid="uid://ctgnrew4inbbg"]
 
 [ext_resource type="Texture2D" uid="uid://c41ughe28i1sb" path="res://assets/background/jungle/plx-1.png" id="1_7brnp"]
 [ext_resource type="Script" path="res://scenes/GameManager.cs" id="1_mw6on"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://e1jpxlpfp6ej" path="res://assets/background/jungle/plx-5.png" id="5_gflse"]
 [ext_resource type="PackedScene" uid="uid://tko6imedi1g8" path="res://scenes/checkpoints/StartCheckpoint.tscn" id="5_jtckm"]
 [ext_resource type="PackedScene" uid="uid://db3pjienn3r8s" path="res://scenes/checkpoints/EndCheckpoint.tscn" id="6_844uv"]
+[ext_resource type="PackedScene" uid="uid://clx2bffc76tmy" path="res://scenes/Interface (UI)/Interface.tscn" id="12_01yva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgfcp"]
 texture = ExtResource("1_ng1st")
@@ -668,6 +669,8 @@ script = ExtResource("3_pvdoo")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(488, -124)
+
+[node name="Interface (UI)" parent="Player/Camera2D" instance=ExtResource("12_01yva")]
 
 [node name="Fruits" type="Node2D" parent="."]
 
