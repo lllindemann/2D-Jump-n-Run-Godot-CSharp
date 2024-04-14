@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://je6o6sxlnxrq"]
+
+[ext_resource type="Texture2D" uid="uid://dxmy6nudabce1" path="res://assets/Interface/ProgressBar/bg.png" id="1_a2osn"]
+[ext_resource type="Texture2D" uid="uid://cmjlc4o1hj73k" path="res://assets/Interface/ProgressBar/fill.png" id="2_4p7ne"]
+
+[node name="Bar" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+texture_under = ExtResource("1_a2osn")
+texture_progress = ExtResource("2_4p7ne")
